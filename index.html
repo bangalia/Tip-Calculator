@@ -6,9 +6,11 @@
 <body>
     <main>
         <h1>Tip Calculator</h1>
-        <div id="display">0.00</div>
+        <div id="display">Bill Amount</div>
         <input id="bill" value="10.00" type="number">
+        <div id="display"> Tip Percentage</div>
         <input id="tip" value="18" type="number">
+        <div id="display">Number of People</div>
         <input id="people" value="2" type="number">
       </main>
       <script>
@@ -21,7 +23,9 @@
          const percent = parseInt(tipInput.value)
          const tip = parseFloat(billInput.value * percent/100)
          const total = parseFloat(billInput.value + tip)
-         display.innerHTML = tipAmount
+         displayTip.innerHTML = Tip
+         displayTotal.innerHTML = Total 
+
         }
         calculateTip()
         billInput.addEventListener('input',calculateTip)
