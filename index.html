@@ -1,19 +1,32 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Page Title</title>
+<title>Tip Calculator</title>
 </head>
 <body>
     <main>
-        <h1>Tip Calc</h1>
+        <h1>Tip Calculator</h1>
         <div id="display">0.00</div>
         <input id="bill" value="10.00" type="number">
-        <input id="tip" value="15" type="number">
+        <input id="tip" value="18" type="number">
+        <input id="people" value="2" type="number">
       </main>
       <script>
          const display = document.querySelector('#display')
          const billInput = document.querySelector('#bill')
          const tipInput = document.querySelector('#tip')
+         const peopleInput = document.querySelector('#people')
+
+         function calculateTip() {
+         const percent = parseInt(tipInput.value)
+         const tip = parseFloat(billInput.value * percent/100)
+         const total = parseFloat(billInput.value + tip)
+         display.innerHTML = tipAmount
+        }
+        calculateTip()
+        billInput.addEventListener('input',calculateTip)
+        tipInput.addEventListener('input',calculateTip)
+        peopleInput.addEventListener('input',calculateTip)
       </script>
 </body>
 </html>
