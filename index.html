@@ -14,23 +14,29 @@
         <input id="people" value="2" type="number">
       </main>
       <script>
-         const display = document.querySelector('#display')
          const billInput = document.querySelector('#bill')
          const tipInput = document.querySelector('#tip')
          const peopleInput = document.querySelector('#people')
+         const displayTip = document.querySelector('#display-tip')
+         const displayTotal = document.querySelector('#display-total')
+
+         billInput.addEventListener('input',calculateTip)
+         tipInput.addEventListener('input',calculateTip)
+         peopleInput.addEventListener('input',calculateTip)
 
          function calculateTip() {
-         const percent = parseInt(tipInput.value)
-         const tip = parseFloat(billInput.value * percent/100)
-         const total = parseFloat(billInput.value + tip)
-         displayTip.innerHTML = Tip
-         displayTotal.innerHTML = Total 
-
+            const percent = parseInt(tipInput.value)
+            const tip = parseFloat(billInput.value * percent/100)
+            const total = parseFloat(billInput.value + tip)
+            
+            displayTip.innerHTML = tip
+            displayTotal.innerHTML = total 
+          
+           console.log('displayTip')
+           console.log('displayTotal')
+            
         }
-        calculateTip()
-        billInput.addEventListener('input',calculateTip)
-        tipInput.addEventListener('input',calculateTip)
-        peopleInput.addEventListener('input',calculateTip)
+    
       </script>
 </body>
 </html>
